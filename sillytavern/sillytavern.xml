@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>SillyTavern</Name>
+  <Repository>ghcr.io/wolfinabox/sillytavern:latest</Repository>
+  <Registry>https://github.com/wolfinabox/SillyTavern</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/SillyTavern/SillyTavern/issues/</Support>
+  <Project>https://github.com/SillyTavern/SillyTavern/</Project>
+  <Overview>
+    Mobile-friendly, Multi-API (KoboldAI/CPP, Horde, NovelAI, Ooba, OpenAI, OpenRouter, Claude, Scale),
+    VN-like Waifu Mode, Horde SD, System TTS, WorldInfo (lorebooks), customizable UI, auto-translate, 
+    and more prompt options than you'd ever want or need.
+  </Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <Icon>https://docs.sillytavern.app/static/logo.png</Icon>
+  <PostArgs/>
+  <CPUset/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="8000" Default="8000" Mode="tcp" Description="WebUI Port" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="Config Path" Target="/home/node/app/config" Default="/mnt/user/appdata/sillytavern/config" Mode="rw" Description="Path for config files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/sillytavern/config</Config>
+  <Config Name="User Path" Target="/home/node/app/public/user" Default="/mnt/user/appdata/sillytavern/user" Mode="rw" Description="Path for user data (characters, chats, etc)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/sillytavern/user</Config>
+</Container>
