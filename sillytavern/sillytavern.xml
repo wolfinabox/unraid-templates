@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>SillyTavern</Name>
-  <Repository>ghcr.io/wolfinabox/sillytavern:latest</Repository>
-  <Registry>https://github.com/wolfinabox/SillyTavern</Registry>
+  <Repository>ghcr.io/sillytavern/sillytavern:staging</Repository>
+  <Registry>https://github.com/sillytavern/SillyTavern</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>bash</Shell>
@@ -14,7 +14,7 @@
     VN-like Waifu Mode, Horde SD, System TTS, WorldInfo (lorebooks), customizable UI, auto-translate, 
     and more prompt options than you'd ever want or need.
   </Overview>
-  <Category/>
+  <Category>AI</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <Icon>https://docs.sillytavern.app/static/logo.png</Icon>
   <PostArgs/>
@@ -22,5 +22,6 @@
   <Requires/>
   <Config Name="WebUI Port" Target="8000" Default="8000" Mode="tcp" Description="WebUI Port" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
   <Config Name="Config Path" Target="/home/node/app/config" Default="/mnt/user/appdata/sillytavern/config" Mode="rw" Description="Path for config files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/sillytavern/config</Config>
-  <Config Name="User Path" Target="/home/node/app/public/user" Default="/mnt/user/appdata/sillytavern/user" Mode="rw" Description="Path for user data (characters, chats, etc)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/sillytavern/user</Config>
+  <Config Name="Data Path" Target="/home/node/app/data" Default="/mnt/user/appdata/sillytavern/data" Mode="rw" Description="Path for user data (characters, chats, etc)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/sillytavern/data</Config>
+  <!-- <Config Name="Plugins Path" Target="/home/node/app/data" Default="/mnt/user/appdata/sillytavern/user" Mode="rw" Description="Path for user data (characters, chats, etc)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/sillytavern/data</Config> -->
 </Container>
