@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>text-generation-webui</Name>
+  <Repository>atinoda/text-generation-webui:base-cpu</Repository>
+  <Registry>https://hub.docker.com/r/atinoda/text-generation-webui/</Registry>
+  <Network>bridge</Network>
+  <MyIP />
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/oobabooga/text-generation-webui/issues</Support>
+  <Project>https://github.com/oobabooga/text-generation-webui</Project>
+  <Overview>Oobabooga's Text Generation Web UI - a gradio web UI for running Large Language Models
+    (LLMs).
+
+    For NVIDIA GPU support:
+    * Add --runtime=nvidia to extra params
+    * Fill out the NVIDIA_VISIBLE_DEVICES field with your GPU(s) ID(s)
+    * Change the Repository tag to either :base-nvidia or :default-nvidia
+
+    AMD/Intel GPU support WIP.
+    https://hub.docker.com/r/atinoda/text-generation-webui/</Overview>
+  <Category>AI</Category>
+  <WebUI>http://[IP]:[PORT:7860]</WebUI>
+  <TemplateURL />
+  <Icon>https://avatars.githubusercontent.com/u/112222186?s=256&amp;v=4</Icon>
+  <ExtraParams></ExtraParams>
+  <PostArgs />
+  <CPUset />
+  <DonateText />
+  <DonateLink>https://github.com/sponsors/oobabooga</DonateLink>
+  <Requires />
+  <Config Name="Webui Port" Target="7860" Default="7860" Mode="tcp" Description="Gradio Webui port"
+    Type="Port"
+    Display="always" Required="true" Mask="false">7860</Config>
+  <Config Name="API Port" Target="5000" Default="5000" Mode="tcp"
+    Description="API port (only if '--api' passed to Extra Launch Args)" Type="Port"
+    Display="always" Required="false" Mask="false">5000</Config>
+  <Config Name="Streaming Port" Target="5005" Default="5005" Mode="tcp"
+    Description="Streaming API port (only if '--api' passed to Extra Launch Args)" Type="Port"
+    Display="always" Required="false" Mask="false">5005</Config>
+  <Config Name="app/characters Path" Target="/app/characters"
+    Default="/mnt/user/appdata/textgenwebui/app/characters" Mode="rw"
+    Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/textgenwebui/app/characters</Config>
+  <Config Name="app/instruction-templates Path" Target="/app/instruction-templates"
+    Default="/mnt/user/appdata/textgenwebui/app/instruction-templates" Mode="rw"
+    Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/textgenwebui/app/instruction-templates</Config>
+  <Config Name="app/loras Path" Target="/app/loras"
+    Default="/mnt/user/appdata/textgenwebui/app/loras" Mode="rw"
+    Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/textgenwebui/app/loras</Config>
+  <Config Name="app/models Path" Target="/app/models"
+    Default="/mnt/user/appdata/textgenwebui/app/models" Mode="rw"
+    Description="Warning: large model files (multiple GB) will be stored here!" Type="Path"
+    Display="always" Required="true" Mask="false">/mnt/user/appdata/textgenwebui/app/models</Config>
+  <Config Name="app/presets Path" Target="/app/presets"
+    Default="/mnt/user/appdata/textgenwebui/app/presets" Mode="rw"
+    Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/textgenwebui/app/presets</Config>
+  <Config Name="app/prompts Path" Target="/app/prompts"
+    Default="/mnt/user/appdata/textgenwebui/app/prompts" Mode="rw"
+    Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/textgenwebui/app/prompts</Config>
+  <Config Name="app/training Path" Target="/app/training"
+    Default="/mnt/user/appdata/textgenwebui/app/training" Mode="rw"
+    Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/textgenwebui/app/training</Config>
+  <Config Name="app/extensions Path" Target="/app/extensions"
+    Default="/mnt/user/appdata/textgenwebui/app/extensions" Mode="rw"
+    Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/textgenwebui/app/extensions</Config>
+  <Config Name="Cache Path" Target="/root/.cache " Default="/mnt/user/appdata/textgenwebui/.cache"
+    Mode="rw" Description="Warning: large library files may be stored here!" Type="Path"
+    Display="always" Required="true" Mask="false">/mnt/user/appdata/textgenwebui/.cache</Config>
+  <Config Name="Extra Launch Args" Target="EXTRA_LAUNCH_ARGS"
+    Default="--listen --api" Mode="" Description="" Type="Variable"
+    Display="always" Required="false" Mask="false">--listen --api --trust-remote-code</Config>
+  <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode=""
+    Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="NVIDIA_DRIVER_CAPABILITIES" Target="NVIDIA_DRIVER_CAPABILITIES" Default="all"
+    Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">all</Config>
+</Container>
